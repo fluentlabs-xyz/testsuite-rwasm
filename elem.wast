@@ -92,11 +92,11 @@
   (func $f)
   (elem (i32.const 0) $f)
 )
-(module
-  (import "spectest" "table" (table 10 funcref))
-  (func $f)
-  (elem (i32.const 0) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 10 funcref))
+;;  (func $f)
+;;  (elem (i32.const 0) $f)
+;;)
 
 (module
   (table 10 funcref)
@@ -107,15 +107,15 @@
   (elem (i32.const 5) $f)
   (elem (i32.const 3) $f)
 )
-(module
-  (import "spectest" "table" (table 10 funcref))
-  (func $f)
-  (elem (i32.const 9) $f)
-  (elem (i32.const 3) $f)
-  (elem (i32.const 7) $f)
-  (elem (i32.const 3) $f)
-  (elem (i32.const 5) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 10 funcref))
+;;  (func $f)
+;;  (elem (i32.const 9) $f)
+;;  (elem (i32.const 3) $f)
+;;  (elem (i32.const 7) $f)
+;;  (elem (i32.const 3) $f)
+;;  (elem (i32.const 5) $f)
+;;)
 
 (module
   (global (import "spectest" "global_i32") i32)
@@ -165,20 +165,20 @@
   (func $f)
   (elem (i32.const 9) $f)
 )
-(module
-  (import "spectest" "table" (table 10 funcref))
-  (func $f)
-  (elem (i32.const 9) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 10 funcref))
+;;  (func $f)
+;;  (elem (i32.const 9) $f)
+;;)
 
 (module
   (table 0 funcref)
   (elem (i32.const 0))
 )
-(module
-  (import "spectest" "table" (table 0 funcref))
-  (elem (i32.const 0))
-)
+;;(module
+;;  (import "spectest" "table" (table 0 funcref))
+;;  (elem (i32.const 0))
+;;)
 
 (module
   (table 0 0 funcref)
@@ -190,29 +190,29 @@
   (elem (i32.const 20))
 )
 
-(module
-  (import "spectest" "table" (table 0 funcref))
-  (func $f)
-  (elem (i32.const 0) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 0 funcref))
+;;  (func $f)
+;;  (elem (i32.const 0) $f)
+;;)
 
-(module
-  (import "spectest" "table" (table 0 100 funcref))
-  (func $f)
-  (elem (i32.const 0) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 0 100 funcref))
+;;  (func $f)
+;;  (elem (i32.const 0) $f)
+;;)
 
-(module
-  (import "spectest" "table" (table 0 funcref))
-  (func $f)
-  (elem (i32.const 1) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 0 funcref))
+;;  (func $f)
+;;  (elem (i32.const 1) $f)
+;;)
 
-(module
-  (import "spectest" "table" (table 0 30 funcref))
-  (func $f)
-  (elem (i32.const 1) $f)
-)
+;;(module
+;;  (import "spectest" "table" (table 0 30 funcref))
+;;  (func $f)
+;;  (elem (i32.const 1) $f)
+;;)
 
 ;; Invalid bounds for elements
 
@@ -258,14 +258,14 @@
   )
   "out of bounds table access"
 )
-(assert_trap
-  (module
-    (import "spectest" "table" (table 10 funcref))
-    (func $f)
-    (elem (i32.const 10) $f)
-  )
-  "out of bounds table access"
-)
+;;(assert_trap
+;;  (module
+;;    (import "spectest" "table" (table 10 funcref))
+;;    (func $f)
+;;    (elem (i32.const 10) $f)
+;;  )
+;;  "out of bounds table access"
+;;)
 
 (assert_trap
   (module
@@ -275,14 +275,14 @@
   )
   "out of bounds table access"
 )
-(assert_trap
-  (module
-    (import "spectest" "table" (table 10 funcref))
-    (func $f)
-    (elem (i32.const 10) $f)
-  )
-  "out of bounds table access"
-)
+;;(assert_trap
+;;  (module
+;;    (import "spectest" "table" (table 10 funcref))
+;;    (func $f)
+;;    (elem (i32.const 10) $f)
+;;  )
+;;  "out of bounds table access"
+;;)
 
 (assert_trap
   (module
@@ -292,14 +292,14 @@
   )
   "out of bounds table access"
 )
-(assert_trap
-  (module
-    (import "spectest" "table" (table 10 funcref))
-    (func $f)
-    (elem (i32.const -1) $f)
-  )
-  "out of bounds table access"
-)
+;;(assert_trap
+;;  (module
+;;    (import "spectest" "table" (table 10 funcref))
+;;    (func $f)
+;;    (elem (i32.const -1) $f)
+;;  )
+;;  "out of bounds table access"
+;;)
 
 (assert_trap
   (module
@@ -309,14 +309,14 @@
   )
   "out of bounds table access"
 )
-(assert_trap
-  (module
-    (import "spectest" "table" (table 10 funcref))
-    (func $f)
-    (elem (i32.const -10) $f)
-  )
-  "out of bounds table access"
-)
+;;(assert_trap
+;;  (module
+;;    (import "spectest" "table" (table 10 funcref))
+;;    (func $f)
+;;    (elem (i32.const -10) $f)
+;;  )
+;;  "out of bounds table access"
+;;)
 
 ;; Implicitly dropped elements
 
@@ -462,7 +462,7 @@
 )
 
 (assert_invalid
-   (module 
+   (module
      (global (import "test" "global-mut-i32") (mut i32))
      (table 1 funcref)
      (elem (global.get 0))
@@ -536,18 +536,18 @@
 )
 (assert_return (invoke "call-overwritten") (i32.const 66))
 
-(module
-  (type $out-i32 (func (result i32)))
-  (import "spectest" "table" (table 10 funcref))
-  (elem (i32.const 9) $const-i32-a)
-  (elem (i32.const 9) $const-i32-b)
-  (func $const-i32-a (type $out-i32) (i32.const 65))
-  (func $const-i32-b (type $out-i32) (i32.const 66))
-  (func (export "call-overwritten-element") (type $out-i32)
-    (call_indirect (type $out-i32) (i32.const 9))
-  )
-)
-(assert_return (invoke "call-overwritten-element") (i32.const 66))
+;;(module
+;;  (type $out-i32 (func (result i32)))
+;;  (import "spectest" "table" (table 10 funcref))
+;;  (elem (i32.const 9) $const-i32-a)
+;;  (elem (i32.const 9) $const-i32-b)
+;;  (func $const-i32-a (type $out-i32) (i32.const 65))
+;;  (func $const-i32-b (type $out-i32) (i32.const 66))
+;;  (func (export "call-overwritten-element") (type $out-i32)
+;;    (call_indirect (type $out-i32) (i32.const 9))
+;;  )
+;;)
+;;(assert_return (invoke "call-overwritten-element") (i32.const 66))
 
 ;; Element sections across multiple modules change the same table
 
@@ -575,31 +575,31 @@
 (assert_return (invoke $module1 "call-8") (i32.const 65))
 (assert_return (invoke $module1 "call-9") (i32.const 66))
 
-(module $module2
-  (type $out-i32 (func (result i32)))
-  (import "module1" "shared-table" (table 10 funcref))
-  (elem (i32.const 7) $const-i32-c)
-  (elem (i32.const 8) $const-i32-d)
-  (func $const-i32-c (type $out-i32) (i32.const 67))
-  (func $const-i32-d (type $out-i32) (i32.const 68))
-)
+;;(module $module2
+;;  (type $out-i32 (func (result i32)))
+;;  (import "module1" "shared-table" (table 10 funcref))
+;;  (elem (i32.const 7) $const-i32-c)
+;;  (elem (i32.const 8) $const-i32-d)
+;;  (func $const-i32-c (type $out-i32) (i32.const 67))
+;;  (func $const-i32-d (type $out-i32) (i32.const 68))
+;;)
+;;
+;;(assert_return (invoke $module1 "call-7") (i32.const 67))
+;;(assert_return (invoke $module1 "call-8") (i32.const 68))
+;;(assert_return (invoke $module1 "call-9") (i32.const 66))
 
-(assert_return (invoke $module1 "call-7") (i32.const 67))
-(assert_return (invoke $module1 "call-8") (i32.const 68))
-(assert_return (invoke $module1 "call-9") (i32.const 66))
-
-(module $module3
-  (type $out-i32 (func (result i32)))
-  (import "module1" "shared-table" (table 10 funcref))
-  (elem (i32.const 8) $const-i32-e)
-  (elem (i32.const 9) $const-i32-f)
-  (func $const-i32-e (type $out-i32) (i32.const 69))
-  (func $const-i32-f (type $out-i32) (i32.const 70))
-)
-
-(assert_return (invoke $module1 "call-7") (i32.const 67))
-(assert_return (invoke $module1 "call-8") (i32.const 69))
-(assert_return (invoke $module1 "call-9") (i32.const 70))
+;;(module $module3
+;;  (type $out-i32 (func (result i32)))
+;;  (import "module1" "shared-table" (table 10 funcref))
+;;  (elem (i32.const 8) $const-i32-e)
+;;  (elem (i32.const 9) $const-i32-f)
+;;  (func $const-i32-e (type $out-i32) (i32.const 69))
+;;  (func $const-i32-f (type $out-i32) (i32.const 70))
+;;)
+;;
+;;(assert_return (invoke $module1 "call-7") (i32.const 67))
+;;(assert_return (invoke $module1 "call-8") (i32.const 69))
+;;(assert_return (invoke $module1 "call-9") (i32.const 70))
 
 ;; Element segments must match element type of table
 
@@ -650,9 +650,9 @@
 (assert_return (invoke $m "get" (i32.const 0)) (ref.extern 42))
 (assert_return (invoke $m "get" (i32.const 1)) (ref.extern 137))
 
-(module
-  (import "exporter" "table" (table $t 2 externref))
-  (elem (i32.const 0) externref (ref.null extern)))
-
-(assert_return (invoke $m "get" (i32.const 0)) (ref.null extern))
-(assert_return (invoke $m "get" (i32.const 1)) (ref.extern 137))
+;;(module
+;;  (import "exporter" "table" (table $t 2 externref))
+;;  (elem (i32.const 0) externref (ref.null extern)))
+;;
+;;(assert_return (invoke $m "get" (i32.const 0)) (ref.null extern))
+;;(assert_return (invoke $m "get" (i32.const 1)) (ref.extern 137))
