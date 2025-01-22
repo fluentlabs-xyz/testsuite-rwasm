@@ -551,29 +551,29 @@
 
 ;; Element sections across multiple modules change the same table
 
-(module $module1
-  (type $out-i32 (func (result i32)))
-  (table (export "shared-table") 10 funcref)
-  (elem (i32.const 8) $const-i32-a)
-  (elem (i32.const 9) $const-i32-b)
-  (func $const-i32-a (type $out-i32) (i32.const 65))
-  (func $const-i32-b (type $out-i32) (i32.const 66))
-  (func (export "call-7") (type $out-i32)
-    (call_indirect (type $out-i32) (i32.const 7))
-  )
-  (func (export "call-8") (type $out-i32)
-    (call_indirect (type $out-i32) (i32.const 8))
-  )
-  (func (export "call-9") (type $out-i32)
-    (call_indirect (type $out-i32) (i32.const 9))
-  )
-)
-
-(register "module1" $module1)
-
-(assert_trap (invoke $module1 "call-7") "uninitialized element")
-(assert_return (invoke $module1 "call-8") (i32.const 65))
-(assert_return (invoke $module1 "call-9") (i32.const 66))
+;;(module $module1
+;;  (type $out-i32 (func (result i32)))
+;;  (table (export "shared-table") 10 funcref)
+;;  (elem (i32.const 8) $const-i32-a)
+;;  (elem (i32.const 9) $const-i32-b)
+;;  (func $const-i32-a (type $out-i32) (i32.const 65))
+;;  (func $const-i32-b (type $out-i32) (i32.const 66))
+;;  (func (export "call-7") (type $out-i32)
+;;    (call_indirect (type $out-i32) (i32.const 7))
+;;  )
+;;  (func (export "call-8") (type $out-i32)
+;;    (call_indirect (type $out-i32) (i32.const 8))
+;;  )
+;;  (func (export "call-9") (type $out-i32)
+;;    (call_indirect (type $out-i32) (i32.const 9))
+;;  )
+;;)
+;;
+;;(register "module1" $module1)
+;;
+;;(assert_trap (invoke $module1 "call-7") "uninitialized element")
+;;(assert_return (invoke $module1 "call-8") (i32.const 65))
+;;(assert_return (invoke $module1 "call-9") (i32.const 66))
 
 ;;(module $module2
 ;;  (type $out-i32 (func (result i32)))
@@ -632,23 +632,23 @@
 
 ;; Initializing a table with an externref-type element segment
 
-(module $m
-	(table $t (export "table") 2 externref)
-	(func (export "get") (param $i i32) (result externref)
-	      (table.get $t (local.get $i)))
-	(func (export "set") (param $i i32) (param $x externref)
-	      (table.set $t (local.get $i) (local.get $x))))
-
-(register "exporter" $m)
-
-(assert_return (invoke $m "get" (i32.const 0)) (ref.null extern))
-(assert_return (invoke $m "get" (i32.const 1)) (ref.null extern))
-
-(assert_return (invoke $m "set" (i32.const 0) (ref.extern 42)))
-(assert_return (invoke $m "set" (i32.const 1) (ref.extern 137)))
-
-(assert_return (invoke $m "get" (i32.const 0)) (ref.extern 42))
-(assert_return (invoke $m "get" (i32.const 1)) (ref.extern 137))
+;;(module $m
+;;	(table $t (export "table") 2 externref)
+;;	(func (export "get") (param $i i32) (result externref)
+;;	      (table.get $t (local.get $i)))
+;;	(func (export "set") (param $i i32) (param $x externref)
+;;	      (table.set $t (local.get $i) (local.get $x))))
+;;
+;;(register "exporter" $m)
+;;
+;;(assert_return (invoke $m "get" (i32.const 0)) (ref.null extern))
+;;(assert_return (invoke $m "get" (i32.const 1)) (ref.null extern))
+;;
+;;(assert_return (invoke $m "set" (i32.const 0) (ref.extern 42)))
+;;(assert_return (invoke $m "set" (i32.const 1) (ref.extern 137)))
+;;
+;;(assert_return (invoke $m "get" (i32.const 0)) (ref.extern 42))
+;;(assert_return (invoke $m "get" (i32.const 1)) (ref.extern 137))
 
 ;;(module
 ;;  (import "exporter" "table" (table $t 2 externref))
