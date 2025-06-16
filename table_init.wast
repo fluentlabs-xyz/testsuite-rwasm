@@ -14,11 +14,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t0) (i32.const 2) func 3 1 4 1)
@@ -72,11 +72,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t0) (i32.const 2) func 3 1 4 1)
@@ -130,11 +130,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t0) (i32.const 2) func 3 1 4 1)
@@ -196,11 +196,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t1) (i32.const 2) func 3 1 4 1)
@@ -254,11 +254,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t1) (i32.const 2) func 3 1 4 1)
@@ -312,11 +312,11 @@
 
 (module
   (type (func (result i32)))  ;; type #0
-  (import "a" "ef0" (func (result i32)))    ;; index 0
-  (import "a" "ef1" (func (result i32)))
-  (import "a" "ef2" (func (result i32)))
-  (import "a" "ef3" (func (result i32)))
-  (import "a" "ef4" (func (result i32)))    ;; index 4
+  (func (export "ef0") (result i32) (i32.const 0))
+  (func (export "ef1") (result i32) (i32.const 1))
+  (func (export "ef2") (result i32) (i32.const 2))
+  (func (export "ef3") (result i32) (i32.const 3))
+  (func (export "ef4") (result i32) (i32.const 4))
   (table $t0 30 30 funcref)
   (table $t1 30 30 funcref)
   (elem (table $t1) (i32.const 2) func 3 1 4 1)

@@ -4,7 +4,8 @@
 (register "M")
 
 (module
-  (func $f (import "M" "f") (param i32) (result i32))
+  (func $f (export "f") (param $x i32) (result i32) (local.get $x))
+;;  (func $f (import "M" "f") (param i32) (result i32))
   (func $g (param $x i32) (result i32)
     (i32.add (local.get $x) (i32.const 1))
   )
@@ -67,8 +68,8 @@
 
 (assert_invalid
   (module
-    (func $f (import "M" "f") (param i32) (result i32))
-    (func $g (import "M" "g") (param i32) (result i32))
+;;    (func $f (import "M" "f") (param i32) (result i32))
+;;    (func $g (import "M" "g") (param i32) (result i32))
     (global funcref (ref.func 7))
   )
   "unknown function 7"
